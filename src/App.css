@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  background:#051e32;
+}
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: #181b29;
+  text-align: center;
+  margin: 10vh auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+h1 {
+  margin: 30px 0;
+  color: white;
+  font-size: 24px;
+}
+
+.complete {
+  text-decoration: line-through;
+}
+
+.form {
+  margin-bottom: 32px;
+}
+
+.task-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid blue;
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: #fff;
+}
+
+.task-input::placeholder {
+  color: #e2e2e2;
+}
+
+.task-button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: blue;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.task-input.edit {
+  border: 2px solid blue;
+}
+
+.task-button.edit {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+  padding: 16px 22px;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.task-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    blue 10%,
+    purple 100%
+  );
+  
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+.task-text {
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.edit-icon {
+  color: #fff;
+}
+@media (max-width: 700px) {
+  .todo-app {
+    width: 350px;
+  }
+  .task-input{
+    width: 240px;
+    position: relative;
+    /* right: 10px; */
+  }
+  .task-button {
+    width: 40px;
+    text-indent: -9999px;
+    line-height: 0; /* Collapse the original line */
+    height: 47px;
+    position: relative;
+    bottom: 1px;
+    /* right: 10px;  */
+}
+  .task-button::after {
+    content: "+";
+    text-indent: 0;
+    display: block;
+}
+.task-row {
+  width: 280px;
+}
+.task-text {
+  font-size: 14px;
+}
+}
